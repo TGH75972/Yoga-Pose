@@ -4,6 +4,10 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 #container {
@@ -12,8 +16,9 @@ body {
     margin: auto;
     background-color: #000000;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 header {
@@ -22,6 +27,13 @@ header {
     background-color: #70b4fc;
     color: #272b26;
     border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    animation: slideIn 1s ease-in-out;
 }
 
 main {
@@ -30,18 +42,29 @@ main {
 
 form {
     margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    font-size: 1.1em;
+    color: #f0f0f0;
 }
 
 select, button {
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #ddd;
+    font-size: 16px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 button {
@@ -50,22 +73,167 @@ button {
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s, transform 0.3s;
 }
 
 button:hover {
-    
     border: 2px solid white;
     background-color: black;
     color: white;
+    transform: scale(1.05);
 }
 
 #pose-suggestion {
     text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
 }
 
 #pose-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#pose-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #70b4fc;
+    color: #272b26;
+    border-radius: 0 0 8px 8px;
+    margin-top: 20px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select, button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+
+    #container {
+        width: 90%;
+    }
+}
+
+#pose-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pose-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#pose-description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    max-width: 600px;
+    color: #f0f0f0;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#pose-details {
+    animation: slideInUp 1s ease-in-out;
+}
+
+button {
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+select:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+#pose-suggestion h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #70b4fc;
+}
+
+#pose-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#pose-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#pose-description{
+    margin: auto auto 40px   ;
+    margin-top: 30px;
 }
