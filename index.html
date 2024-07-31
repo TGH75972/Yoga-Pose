@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Pose Suggestion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Yoga Pose Suggestion</h1>
+        </header>
+        <main>
+            <form id="pose-form">
+                <label for="difficulty">Choose Difficulty:</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <button type="button" id="suggest-pose">Suggest Pose</button>
+            </form>
+            <div id="pose-suggestion">
+                <h2>Suggested Pose:</h2>
+                <p id="pose-name">Please select your difficulty level and click "Suggest Pose".</p>
+                <img id="pose-image" src="" alt="" />
+                <p id="pose-description"></p>
+            </div>
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
